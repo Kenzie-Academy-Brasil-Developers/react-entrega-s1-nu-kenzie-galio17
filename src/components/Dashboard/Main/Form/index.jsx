@@ -5,6 +5,7 @@ function Form({ setTransactionList }) {
     description: "",
     value: "R$0,00",
     typeValue: "",
+    id: 1,
   });
 
   function handleValueInput(event) {
@@ -24,6 +25,7 @@ function Form({ setTransactionList }) {
       onSubmit={(event) => {
         event.preventDefault();
         setTransactionList((oldList) => [userInput, ...oldList]);
+        setUserInput({ ...userInput, id: userInput.id + 1 });
       }}
     >
       <label htmlFor="description">Descrição</label>
