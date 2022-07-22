@@ -4,7 +4,10 @@ function Card({
 }) {
   function removeTransaction() {
     setTransactionList((transactionList) =>
-      transactionList.filter((newTransaction) => newTransaction.id !== id)
+      transactionList.filter((newTransaction) => {
+        console.log({ id, elemID: newTransaction.id });
+        return newTransaction.id !== id;
+      })
     );
   }
 

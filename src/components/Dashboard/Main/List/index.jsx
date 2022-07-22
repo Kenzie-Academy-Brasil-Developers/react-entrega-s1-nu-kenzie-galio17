@@ -1,6 +1,7 @@
 import Card from "./Card";
 
 function List({ displayList, setTransactionList }) {
+  console.log(displayList);
   const liItems = displayList.map((transaction) => (
     <Card
       key={transaction.id}

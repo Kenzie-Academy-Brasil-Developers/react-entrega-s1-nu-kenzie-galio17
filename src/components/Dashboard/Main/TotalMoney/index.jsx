@@ -1,4 +1,4 @@
-function TotalMoney({ displayList }) {
+function TotalMoney({ displayList, typeFilter }) {
   const total = displayList.reduce((total, { value, typeValue }) => {
     const curValue = Number(value.replace(/R\$\s(\d*),(\d*)/, "$1.$2"));
     if (typeValue === "Entrada") return total + curValue;
@@ -11,10 +11,14 @@ function TotalMoney({ displayList }) {
       <h2>
         Valor total:{" "}
         <strong>
-          {total < 0 && "- "}R$ {Math.abs(total.toFixed(2))}
+          {total < 0 && typeFilter !== "Despesa" && "- "}R${" "}
+          {Math.abs(total.toFixed(2))}
         </strong>
       </h2>
-      <span>O valor se refere ao saldo</span>
+      <span>
+        O valor se refere a
+        {typeFilter.length ? `s ${typeFilter.toLowerCase()}s` : "o saldo"}
+      </span>
     </section>
   );
 }

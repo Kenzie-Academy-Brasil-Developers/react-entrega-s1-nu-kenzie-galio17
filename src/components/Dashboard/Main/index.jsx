@@ -7,10 +7,10 @@ import TotalMoney from "./TotalMoney";
 function Main() {
   const [transactionList, setTransactionList] = useState([]);
   const [displayList, setDisplayList] = useState(transactionList);
-  const [followDatabase, setFollowDatabase] = useState("");
+  const [typeFilter, setTypeFilter] = useState("");
 
   useEffect(() =>
-    followDatabase.length
+    typeFilter.length
       ? setDisplayList(displayList)
       : setDisplayList(transactionList)
   );
@@ -19,14 +19,17 @@ function Main() {
     <main>
       <div className="container">
         <section>
-          <Form setTransactionList={setTransactionList} />
-          <TotalMoney displayList={displayList} />
+          <Form
+            setTransactionList={setTransactionList}
+            setTypeFilter={setTypeFilter}
+          />
+          <TotalMoney displayList={displayList} typeFilter={typeFilter} />
         </section>
         <section>
           <Filter
             setDisplayList={setDisplayList}
             transactionList={transactionList}
-            setFollowDatabase={setFollowDatabase}
+            setTypeFilter={setTypeFilter}
           />
           <List
             displayList={displayList}

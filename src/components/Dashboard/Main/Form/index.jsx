@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Form({ setTransactionList }) {
+function Form({ setTransactionList, setTypeFilter }) {
   const [userInput, setUserInput] = useState({
     description: "",
-    value: "R$0,00",
+    value: "R$ 0,00",
     typeValue: "",
     id: 1,
   });
@@ -17,13 +17,14 @@ function Form({ setTransactionList }) {
     }
     value = value.replace(/(..)$/, ",$1");
 
-    inputValue.value = `R$${value}`;
+    inputValue.value = `R$ ${value}`;
   }
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
+        setTypeFilter("");
         setTransactionList((oldList) => [userInput, ...oldList]);
         setUserInput({ ...userInput, id: userInput.id + 1 });
       }}
