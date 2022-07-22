@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import List from "./List";
+import TotalMoney from "./TotalMoney";
 
 function Main() {
   const [transactionList, setTransactionList] = useState([]);
@@ -13,6 +14,7 @@ function Main() {
       <div className="container">
         <section>
           <Form setTransactionList={setTransactionList} />
+          <TotalMoney displayList={displayList} />
         </section>
         <section>
           <List
