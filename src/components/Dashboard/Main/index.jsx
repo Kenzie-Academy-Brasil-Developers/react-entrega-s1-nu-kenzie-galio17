@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
+import List from "./List";
 
 function Main() {
   const [transactionList, setTransactionList] = useState([]);
@@ -13,7 +14,12 @@ function Main() {
         <section>
           <Form setTransactionList={setTransactionList} />
         </section>
-        <section></section>
+        <section>
+          <List
+            displayList={displayList}
+            setTransactionList={setTransactionList}
+          />
+        </section>
       </div>
     </main>
   );
