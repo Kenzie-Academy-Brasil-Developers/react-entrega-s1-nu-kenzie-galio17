@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Homepage";
 
 function App() {
@@ -7,7 +8,11 @@ function App() {
 
   return (
     <div className="App">
-      <Homepage setIsLoggedIn={setIsLoggedIn} />
+      {isLoggedIn ? (
+        <Dashboard setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <Homepage setIsLoggedIn={setIsLoggedIn} />
+      )}
     </div>
   );
 }
