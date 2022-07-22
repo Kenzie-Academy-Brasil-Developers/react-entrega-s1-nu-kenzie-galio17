@@ -8,7 +8,7 @@ function Homepage({ setIsLoggedIn }) {
   return (
     <main>
       <section>
-        <h1>
+        <h1 className="logo">
           <strong>Nu</strong> Kenzie
         </h1>
         <p>Centralize o controle das suas finanças</p>
