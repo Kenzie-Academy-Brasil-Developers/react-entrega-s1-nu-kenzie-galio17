@@ -12,7 +12,7 @@ function TotalMoney({ displayList, typeFilter }) {
         Valor total:{" "}
         <strong>
           {total < 0 && typeFilter !== "Despesa" && "- "}R${" "}
-          {Math.abs(total.toFixed(2))}
+          {Math.abs(total).toFixed(2)}
         </strong>
       </h2>
       <span>

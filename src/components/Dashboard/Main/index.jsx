@@ -34,6 +34,7 @@ function Main() {
           <List
             displayList={displayList}
             setTransactionList={setTransactionList}
+            setDisplayList={setDisplayList}
           />
         </section>
       </div>

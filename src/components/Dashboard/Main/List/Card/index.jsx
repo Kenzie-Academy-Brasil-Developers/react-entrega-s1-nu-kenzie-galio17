@@ -1,13 +1,15 @@
 function Card({
   setTransactionList,
-  transaction: { id, description, value, typeValue },
+  setDisplayList,
+  transaction: { id: removeId, description, value, typeValue },
 }) {
   function removeTransaction() {
     setTransactionList((transactionList) =>
-      transactionList.filter((newTransaction) => {
-        console.log({ id, elemID: newTransaction.id });
-        return newTransaction.id !== id;
-      })
+      transactionList.filter(({ id }) => id !== removeId)
+    );
+
+    setDisplayList((displayList) =>
+      displayList.filter(({ id }) => id !== removeId)
     );
   }
 
