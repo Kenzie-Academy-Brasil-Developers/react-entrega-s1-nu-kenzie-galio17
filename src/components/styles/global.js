@@ -16,14 +16,16 @@ const Global = createGlobalStyle`
 
     /* Others Palette */
     --shadow: #00000040;
+    --shadow-gradient: #FD377E10;
 
     /* Fonts */
-    font: 0.75rem 'Nunito', sans-serif;
-    --title-1: bold 1.75rem inherit;
-    --title-2: bold 1.5rem inherit;
-    --title-3: bold 1.25rem inherit;
-    --title-4: bold 0.75rem inherit;
-    --headline: normal 1rem inherit;
+    --nunito: 'Nunito', sans-serif;
+    --title-1: 700 1.75rem var(--nunito);
+    --title-2: 700 1.5rem var(--nunito);
+    --title-3: 700 1.25rem var(--nunito);
+    --title-4: 700 0.75rem var(--nunito);
+    --headline: 400 1rem var(--nunito);
+    font-family: var(--nunito);
   }
 
   * {
@@ -33,6 +35,22 @@ const Global = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font: inherit;
+  }
+
+  body {
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    font: var(--title-2)
+  }
+
+  h2, h3 {
+    font: var(--title-3)
+  }
+
+  strong {
+    color: var(--color-primary-1);
   }
   
   button, select {
