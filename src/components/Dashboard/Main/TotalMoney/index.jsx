@@ -7,19 +7,21 @@ function TotalMoney({ displayList, typeFilter }) {
   }, 0);
 
   return (
-    <section>
-      <h2>
-        Valor total:{" "}
-        <strong>
-          {total < 0 && typeFilter !== "Despesa" && "- "}R${" "}
-          {Math.abs(total).toFixed(2)}
-        </strong>
-      </h2>
-      <span>
-        O valor se refere a
-        {typeFilter.length ? `s ${typeFilter.toLowerCase()}s` : "o saldo"}
-      </span>
-    </section>
+    displayList.length && (
+      <section className="totalMoneyContainer">
+        <h2>
+          Valor total:{" "}
+          <strong className="totalMoney">
+            {total < 0 && typeFilter !== "Despesa" && "- "}R${" "}
+            {Math.abs(total).toFixed(2)}
+          </strong>
+        </h2>
+        <span>
+          O valor se refere a
+          {typeFilter.length ? `s ${typeFilter.toLowerCase()}s` : "o saldo"}
+        </span>
+      </section>
+    )
   );
 }
 

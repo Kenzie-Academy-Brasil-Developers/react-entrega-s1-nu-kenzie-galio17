@@ -1,3 +1,5 @@
+import Button from "../../../../Global/Button/styles";
+
 function Card({
   setTransactionList,
   setDisplayList,
@@ -14,13 +16,15 @@ function Card({
   }
 
   return (
-    <li>
-      <div>
+    <li className={typeValue.toLowerCase()}>
+      <div className="transaction__details">
         <h3>{description}</h3>
         <span>{typeValue}</span>
       </div>
-      <h4>{value}</h4>
-      <button onClick={removeTransaction}>lixeira</button>
+      <div className="transaction__important">
+        <h4>{value}</h4>
+        <Button onClick={removeTransaction}>lixeira</Button>
+      </div>
     </li>
   );
 }

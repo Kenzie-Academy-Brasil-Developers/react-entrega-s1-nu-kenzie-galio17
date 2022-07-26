@@ -17,27 +17,25 @@ function Main() {
 
   return (
     <main>
-      <div className="container">
-        <section>
-          <Form
-            setTransactionList={setTransactionList}
-            setTypeFilter={setTypeFilter}
-          />
-          <TotalMoney displayList={displayList} typeFilter={typeFilter} />
-        </section>
-        <section>
-          <Filter
-            setDisplayList={setDisplayList}
-            transactionList={transactionList}
-            setTypeFilter={setTypeFilter}
-          />
-          <List
-            displayList={displayList}
-            setTransactionList={setTransactionList}
-            setDisplayList={setDisplayList}
-          />
-        </section>
-      </div>
+      <section>
+        <Form
+          setTransactionList={setTransactionList}
+          setTypeFilter={setTypeFilter}
+        />
+        <TotalMoney displayList={displayList} typeFilter={typeFilter} />
+      </section>
+      <section>
+        <Filter
+          setDisplayList={setDisplayList}
+          transactionList={transactionList}
+          setTypeFilter={setTypeFilter}
+        />
+        <List
+          displayList={displayList}
+          setTransactionList={setTransactionList}
+          setDisplayList={setDisplayList}
+        />
+      </section>
     </main>
   );
 }

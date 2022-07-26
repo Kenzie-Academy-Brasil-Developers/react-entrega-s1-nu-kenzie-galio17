@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../../../Global/Button/styles";
+import TypeValueSelect from "./Select";
 
 function Form({ setTransactionList, setTypeFilter }) {
   const [userInput, setUserInput] = useState({
@@ -42,7 +44,7 @@ function Form({ setTransactionList, setTypeFilter }) {
         }
       />
       <span>Ex: Compra de roupas</span>
-      <div>
+      <div className="valueContainer">
         <div>
           <label htmlFor="value">Valor</label>
           <input
@@ -58,21 +60,19 @@ function Form({ setTransactionList, setTypeFilter }) {
         </div>
         <div>
           <label htmlFor="typeValue">Tipo de Valor</label>
-          <select
+          <TypeValueSelect
             name="typeValue"
             value={userInput.typeValue}
             id="typeValue"
-            onChange={(event) =>
-              setUserInput({ ...userInput, typeValue: event.target.value })
+            handleChange={(event) =>
+              setUserInput({ ...userInput, typeValue: event.value })
             }
-          >
-            <option value="">Selecione um tipo</option>
-            <option value="Entrada">Entrada</option>
-            <option value="Despesa">Despesa</option>
-          </select>
+          />
         </div>
       </div>
-      <button type="submit">Inserir valor</button>
+      <Button primary type="submit">
+        Inserir valor
+      </Button>
     </form>
   );
 }

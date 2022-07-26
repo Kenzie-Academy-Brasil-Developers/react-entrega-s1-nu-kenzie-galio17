@@ -1,11 +1,13 @@
+import Button from "../../Global/Button/styles";
+
 function Header({ setIsLoggedIn }) {
   return (
     <header>
-      <div className="container">
-        <h1 className="logo">
+      <div className="headerContainer">
+        <h1>
           <strong>Nu</strong> Kenzie
         </h1>
-        <button onClick={() => setIsLoggedIn(false)}>Início</button>
+        <Button onClick={() => setIsLoggedIn(false)}>Início</Button>
       </div>
     </header>
   );

@@ -1,3 +1,5 @@
+import Button from "../../../Global/Button/styles";
+
 function Filter({ setDisplayList, transactionList, setTypeFilter }) {
   function filterTransactions(typeValueFilter) {
     if (typeValueFilter) {
@@ -11,12 +13,12 @@ function Filter({ setDisplayList, transactionList, setTypeFilter }) {
   }
 
   return (
-    <section>
+    <section className="filterContainer">
       <h2>Resumo Financeiro</h2>
       <div>
-        <button onClick={() => filterTransactions()}>Todos</button>
-        <button onClick={() => filterTransactions("Entrada")}>Entradas</button>
-        <button onClick={() => filterTransactions("Despesa")}>Despesas</button>
+        <Button onClick={() => filterTransactions()}>Todos</Button>
+        <Button onClick={() => filterTransactions("Entrada")}>Entradas</Button>
+        <Button onClick={() => filterTransactions("Despesa")}>Despesas</Button>
       </div>
     </section>
   );
